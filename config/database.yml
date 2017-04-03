@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch('MAX_THREADS') { 5 } %>
+
+development:
+  <<: *default
+  database: detroit-tigers-api_development
+
+test:
+  <<: *default
+  database: detroit-tigers-api_test
+
+production:
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
