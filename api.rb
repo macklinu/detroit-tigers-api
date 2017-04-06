@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/json'
@@ -15,6 +17,7 @@ get '/games/all' do
   json Game.all
 end
 
+# rubocop:disable Style/Documentation
 class Game < ActiveRecord::Base
   enum location: {
     home: 0,

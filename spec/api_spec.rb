@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe 'Detroit Tigers API' do
   describe 'GET /' do
     it 'should return Hello World!' do
