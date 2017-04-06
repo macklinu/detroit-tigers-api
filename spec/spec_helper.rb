@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'airborne'
 require 'awesome_print'
 require 'chronic'
