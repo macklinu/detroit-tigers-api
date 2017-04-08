@@ -3,3 +3,7 @@ AllCops:
     - 'db/schema.rb'
   DisplayCopNames: true
   TargetRubyVersion: 2.4
+
+# Disable this cop in RSpec tests
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context']

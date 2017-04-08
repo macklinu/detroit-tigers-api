@@ -26,9 +26,16 @@ Airborne.configure do |config|
   config.rack_app = Sinatra::Application
 end
 
+module FixturesHelper
+  def fixture(file_name)
+    File.open("#{File.dirname(__FILE__)}/fixtures/#{file_name}").read
+  end
+end
+
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include JsonSpec::Helpers
+  config.include FixturesHelper
 
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
