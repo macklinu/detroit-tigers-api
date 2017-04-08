@@ -1,2 +1,5 @@
 # frozen_string_literal: true
-# TODO: Seed database with data from mlb.com CSV data
+
+require './bot.rb'
+
+TigersScheduleBot.new.scrape_and_save!

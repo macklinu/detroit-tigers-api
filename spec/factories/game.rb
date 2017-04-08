@@ -6,14 +6,6 @@ FactoryGirl.define do
     time { Chronic.parse('now') }
     opponent { Faker::Team.state }
 
-    trait :home do
-      location :home
-    end
-
-    trait :away do
-      location :away
-    end
-
     trait :tbd do
       time nil
     end

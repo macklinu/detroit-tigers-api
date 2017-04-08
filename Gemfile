@@ -12,6 +12,7 @@ gem 'rake'
 gem 'sinatra', '~> 2.0.0.rc2'
 gem 'sinatra-activerecord'
 gem 'sinatra-contrib', '~> 2.0.0.rc2'
+gem 'timeliness'
 
 group :development, :test do
   gem 'airborne'

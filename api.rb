@@ -4,6 +4,7 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/json'
 require 'sinatra/reloader' if development?
+require './game.rb'
 
 before do
   content_type :json
@@ -15,12 +16,4 @@ end
 
 get '/games/all' do
   json Game.all
-end
-
-# rubocop:disable Style/Documentation
-class Game < ActiveRecord::Base
-  enum location: {
-    home: 0,
-    away: 1
-  }
 end
