@@ -85,3 +85,8 @@ $ bundle exec guard
 ### Meta
 
 Install [Overcommit](https://github.com/brigade/overcommit#installation) for pre- and post-commit hooks. See `.overcommit.yml` for more information.
+
+## Deploy to Heroku
+
+This requires the [stomita/heroku-buildpack-phantomjs
+](https://github.com/stomita/heroku-buildpack-phantomjs) for screen-scraping on Heroku (specifically for the `rake db:seed` task).
