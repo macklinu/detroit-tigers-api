@@ -24,4 +24,24 @@ describe 'Detroit Tigers API' do
                              time: :date)
     end
   end
+  describe 'GET /games/upcoming' do
+    it 'returns the next 7 days of games by default' do
+      now = Date.today
+      six_days_from_now = now + 6.days
+      (now..six_days_from_now).each do |date|
+        create(:game, date: date)
+      end
+
+      get '/games/upcoming'
+
+      expect_status(200)
+      expect_json_sizes(7)
+      expect_json_types('*', id: :int,
+                             opponent: :string,
+                             date: :date,
+                             time: :date)
+      expect_json('0', date: now.strftime('%F'))
+      expect_json('6', date: six_days_from_now.strftime('%F'))
+    end
+  end
 end

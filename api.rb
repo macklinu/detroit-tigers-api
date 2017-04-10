@@ -17,3 +17,7 @@ end
 get '/games/all' do
   json Game.all
 end
+
+get '/games/upcoming' do
+  json Game.where(date: Date.today..Date.today + 6.days)
+end
