@@ -14,7 +14,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
-    airborne (0.2.9)
+    airborne (0.2.12)
       activesupport
       rack
       rack-test (~> 0.6, >= 0.6.2)
