@@ -14,8 +14,7 @@ describe 'Detroit Tigers API' do
 
         expect_status(200)
         expect_json_sizes(7)
-        expect_json_types('*', id: :int,
-                               opponent: :string,
+        expect_json_types('*', opponent: :string,
                                date: :date,
                                time: :date)
         expect_json('0', date: now.strftime('%F'))

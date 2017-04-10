@@ -6,7 +6,6 @@ require 'chronic'
 require 'database_cleaner'
 require 'factory_girl'
 require 'faker'
-require 'json_spec'
 require 'rack/test'
 require 'rspec'
 
@@ -17,10 +16,6 @@ Dir['./spec/support/**/*.rb'].each { |file| require file }
 
 FactoryGirl.definition_file_paths = %w[./spec/factories]
 FactoryGirl.find_definitions
-
-JsonSpec.configure do
-  exclude_keys 'created_at', 'updated_at'
-end
 
 Airborne.configure do |config|
   config.rack_app = Sinatra::Application
@@ -34,7 +29,6 @@ end
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
-  config.include JsonSpec::Helpers
   config.include FixturesHelper
 
   config.expect_with :rspec do |expectations|

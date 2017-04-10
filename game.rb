@@ -21,6 +21,14 @@ class Game < ActiveRecord::Base
     Timeliness.parse("#{time}m") unless time.nil? || time == 'TBD'
   end
 
+  def to_json
+    {
+      date: date,
+      time: time,
+      opponent: opponent
+    }
+  end
+
   private_class_method :parse_date
   private_class_method :parse_time
 end

@@ -7,13 +7,11 @@ require 'sinatra/namespace'
 require 'sinatra/reloader' if development?
 require './game.rb'
 
-before do
-  content_type :json
-end
-
 namespace '/v1' do
   get '/games/upcoming' do
-    json Game.where(date: Date.today..Date.today + 6.days)
+    content_type :json
+    games = Game.where(date: Date.today..Date.today + 6.days)
+    json games.map(&:to_json)
   end
 end
 

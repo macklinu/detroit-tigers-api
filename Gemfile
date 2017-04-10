@@ -23,7 +23,6 @@ group :development, :test do
   gem 'guard'
   gem 'guard-rspec', require: false
   gem 'guard-rubocop', require: false
-  gem 'json_spec'
   gem 'rack-test'
   gem 'rspec'
   gem 'rubocop'
