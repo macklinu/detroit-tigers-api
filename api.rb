@@ -21,3 +21,7 @@ end
 get '/games/upcoming' do
   json Game.where(date: Date.today..Date.today + 6.days)
 end
+
+not_found do
+  json message: 'Not found'
+end

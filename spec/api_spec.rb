@@ -44,4 +44,14 @@ describe 'Detroit Tigers API' do
       expect_json('6', date: six_days_from_now.strftime('%F'))
     end
   end
+  describe 'Error handling' do
+    describe '404' do
+      it 'returns proper error message' do
+        get '/invalid_endpoint'
+
+        expect_status(404)
+        expect_json(message: 'Not found')
+      end
+    end
+  end
 end
