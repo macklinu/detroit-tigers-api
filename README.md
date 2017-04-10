@@ -73,10 +73,10 @@ This serves the API on port 9292 by default and uses `config.ru` as the default 
 ### Run tests
 
 ```sh
-$ bundle exec rake
+$ bundle exec rspec
 ```
 
-By default, `rake` will run the RSpec test suite. Also, use Guard to watch and run tests and Rubocop locally when files change:
+You can also use Guard to watch and run tests and Rubocop locally when files change:
 
 ```sh
 $ bundle exec guard
